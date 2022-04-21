@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:lc="http://xmlns.jcp.org/jsf/composite/LoginControl">
+    <h:head>
+        <title>Grant University</title>
+        <link href="./ressourses/EternStyleSheet.css" rel="stylesheet" type="text/css"/>
+        <style>
+            table, tr{
+                border: 1px solid white;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <table border="0" align="top" width="100%" style="background-color:#808080; position: relative; height:100px">
+            <tr>
+                <td bgcolor="#000080" align="center">
+                    <p style="font-size:38pt; color:#ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+                            </td>
+                <td bgcolor="#666699" align="left" width="180">
+                    <img alt="Picture Error" src="Images/education.jpg" width="180" height="180" align="right"/> 
+                </td>
+            </tr>     
+       </table>
+        <table bgcolor="white" border="1" align="top" width="100%" style="height: 470px">
+            <tr>
+                    <td bgcolor="#000080" width="20%" valign="top" align="center">
+                        <br/><br/>
+                        <h:form>
+                            <h:commandLink styleClass="fFormat" action="index" value="Home"></h:commandLink>
+                        <br/><br/>
+                            <h:commandLink styleClass="fFormat" action="AboutUs" value="About Us"></h:commandLink>
+                        <br/><br/>
+                            <h:commandLink styleClass="fFormat" action="Registration" value="Registration"></h:commandLink>
+                        <br/><br/>
+                           <h:commandLink styleClass="fFormat" action="Admissions" value="Admissions"></h:commandLink>
+                        <br/><br/>
+                            <h:commandLink styleClass="fFormat" action="Contacts" value="Contact Us"></h:commandLink>
+                        <br/><br/>
+                           <h:commandLink styleClass="fFormat" action="CourseDetails" value="Course Details"></h:commandLink>
+                        </h:form>
+                        <lc:LoginControl userName="#{bean.ID}" password="#{bean.PASS}" submitValue="Submit" resetValue="Reset"/>
+<!--                         </h:form>
+                                        </table>
+                                        </td>
+                                        </tr>
+                                    </table>-->
+                    </td>
+                <!--Page specific content starts here--> 
+                <td width="85%" valign="top" bgcolor="white">
+                    <ui:insert name="body"/>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+</html>
+

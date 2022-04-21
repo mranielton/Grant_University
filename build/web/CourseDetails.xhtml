@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Course Details</title>
+        <style>
+            table, tr {
+                border: 1px solid white;
+            }
+        </style>
+    </h:head>
+    <h:body>
+         <ui:composition template="BaseTemplate.xhtml">
+            <ui:define name="body">
+               
+                    <p style="font-size:12pt">
+                        <br/>
+                        <p style="color: white; font-size: 20pt" align="center">
+                            <b>Course Details</b>
+                        </p>
+                        <br/> <br/>
+                        <table border="0" width="50%" align="center">
+                            <h:form>
+                                <tr>
+                                    <td>Select Course Name</td>
+                                    <td>:</td>
+                                    <td align="center">
+                                        <h:selectOneMenu id="cname" value="#{courseDetailsBean.courseName}" valueChangeListener="#{courseDetailsBean.CourseDetailsAction}" onchange="this.form.submit()">
+                                            <f:selectItem itemValue="" itemLabel=""/>
+                                            <f:selectItem itemValue="Science" itemLabel="Science"/>
+                                            <f:selectItem itemValue="Law" itemLabel="Law"/>
+                                            <f:selectItem itemValue="Medical" itemLabel="Medical"/>
+                                            <f:selectItem itemValue="Management" itemLabel="Management"/>
+                                        </h:selectOneMenu>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        Course Id
+                                    </td>
+                                    <td>
+                                        <br/>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                        <br/>
+                                            <h:outputText id="cid" binding="#{courseDetailsBean.courseId}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Duration
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                          <h:outputText id="cdur" binding="#{courseDetailsBean.courseDuration}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Eligibility
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                         <h:outputText id="celig" binding="#{courseDetailsBean.courseEligibility}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Fee
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                       <h:outputText id="cfee" binding="#{courseDetailsBean.courseFee}"/>
+                                    </td>
+                                </tr>
+                            </h:form>
+                        </table>
+                    </p>
+            </ui:define>
+        </ui:composition>
+        
+        
+        
+        
+        
+<!--        <table borde="0" align="top" width="100%" style="background-color:#808080; position: relative; height:100px">
+            <tr>
+                <td bgcolor="#000080" align="center">
+                    <p style="font-size:38pt; color:#ffffff; font-family: Arial Rounded MT Bold">GRANT UNIVERSITY</p>
+                            </td>
+                <td bgcolor="#666699" align="left" width="180">
+                    <img alt="" src="Images/education.jpg" width="180" height="160" align="right"/> 
+                </td>
+            </tr>     
+       </table>
+        <table bgcolor="white" border="1" align="top" width="100%" style="height: 470px">
+            <tr>
+                <td bgcolor="#000080" width="20%" valign="top" align="center">
+                    <br/> <br/>
+                    <h:form>
+                        <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="index" value="Home"></h:commandLink>
+                    <br/> <br/>
+                    <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="AboutUs" value="About Us"></h:commandLink>
+                    <br/> <br/>
+                    <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="Registration" value="Registration"></h:commandLink>
+                    <br/> <br/>
+                    <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="Admissions" value="Admissions"></h:commandLink>
+                    <br/> <br/>
+                    <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="Contacts" value="Contact Us"></h:commandLink>
+                    <br/> <br/>
+                    <h:commandLink style="fony-family:Verdana, Geneva,sans-serif; text-decoration: none; color:white;" action="CourseDetails" value="Course Details"></h:commandLink>
+                    <br/> <br/>
+                    </h:form>
+                    <br/> <br/> <br/> <br/>
+                    <table cellspacing="0.5" border="1" align="center" width="100%" bgcolor="FFFFFF">
+                        <tr>
+                            <td bgcolor="#000080"><p style="font-size: 14pt; color: #ffffff">Account Login</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#000080">
+                                <table border="0" align="center" width="100%">
+                                    <h:form>
+                                            <tr>
+                                                <td align="left"><p style="color:#ffffff">Id</p>
+                                                </td>
+                                                <td align="left"><h:inputText size="20" id="id" value="#{bean.ID}"></h:inputText>
+                                                </td>
+                                        </tr>
+                                            <tr>
+                                                <td align="left"><p style="color:#ffffff">Password:</p>
+                                                </td>
+                                                <td align="left">
+                                                    <h:inputSecret size="21" id="pass" value="#{bean.PASS}"></h:inputSecret>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td align="center"><h:commandButton value="Submit" action="#{bean.Action}"/></td>
+                                                <td align="center"><h:commandButton value="Reset" type="reset"/></td>
+                                            </tr>
+                                            </h:form>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="85%" valign="top" bgcolor="white">
+                    Page specific content starts here
+                    <p style="font-size:12pt">
+                        <br/>
+                        <p style="color: darkblue; font-size: 20pt" align="center">
+                            <b>Course Details</b>
+                        </p>
+                        <br/> <br/>
+                        <table border="0" width="50%" align="center">
+                            <h:form>
+                                <tr>
+                                    <td>Select Course Name</td>
+                                    <td>:</td>
+                                    <td align="center">
+                                        <h:selectOneMenu id="cname" value="#{courseDetailsBean.courseName}" valueChangeListener="#{courseDetailsBean.CourseDetailsAction}" onchange="this.form.submit()">
+                                            <f:selectItem itemValue="" itemLabel=""/>
+                                            <f:selectItem itemValue="Science" itemLabel="Science"/>
+                                            <f:selectItem itemValue="Law" itemLabel="Law"/>
+                                            <f:selectItem itemValue="Medical" itemLabel="Medical"/>
+                                            <f:selectItem itemValue="Management" itemLabel="Management"/>
+                                        </h:selectOneMenu>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        Course Id
+                                    </td>
+                                    <td>
+                                        <br/>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                        <br/>
+                                            <h:outputText id="cid" binding="#{courseDetailsBean.courseId}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Duration
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                        <br/>
+                                            <h:outputText id="cdur" binding="#{courseDetailsBean.courseDuration}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Eligibility
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                        <br/>
+                                            <h:outputText id="celig" binding="#{courseDetailsBean.courseEligibility}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Course Fee
+                                    </td>
+                                    <td>
+                                        :
+                                    </td>
+                                    <td align="center">
+                                        <br/>
+                                            <h:outputText id="cfee" binding="#{courseDetailsBean.courseFee}"/>
+                                    </td>
+                                </tr>
+                            </h:form>
+                        </table>
+                    </p>
+                    Page specific content ends here
+                </td>
+            </tr>
+        </table>-->
+    </h:body>
+</html>
+
